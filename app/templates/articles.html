@@ -3,41 +3,42 @@
        
 
         <div class="input_new">
-           <textarea class="form-control" name="content"placeholder="Что у вас нового?"></textarea>
-            <button href="javascript:void(0)" class="btn btn-raised btn-primary news_send_button">Отправить</button>
+           <textarea class="form-control" data-ng-model="article.Text" name="content" placeholder="Что у вас нового?"></textarea>
+            <a href="javascript:void(0)" data-ng-click="sendArticle()" class="btn btn-raised btn-primary news_send_button">Отправить</a>
         </div>
 
 
-        <div class="news">
+        <div class="news" ng-repeat="article in articles | orderBy:'PublishDate':reverse">
             <div class="news_author">
                 <div class="row">
                     <div class="col-xs-4 news_author_photo">
                         <img class="photo" src="img/avatar.jpg">
                     </div>
-                    <div class="col-xs-8 news_author_info">
+                    <div class="col-xs-7 news_author_info">
                         <div class="row">
                             <div class="news_author_info_name">
-                                Вася Макарчук
+                                {{article.User.UserName}}
                             </div>
                             <div class="news_author_info_date">
-                                Сегодня в 15:04
+                                {{article.PublishDate}}
                             </div>
                         </div>
                     </div>
+                    <div class="col-xs-1">
+                        <span data-ng-click="deleteArticle(article.Id)" class="glyphicon glyphicon-remove"></span>
+                    </div>  
                 </div>
             </div>
             <div class="news_content">
                 <div class="news_content_text">
-                    Закончил работу над своим новым проектом. Цените на гитхабе @darthvasya )))
+                    {{article.Text}}
                 </div>
                 <div class="news_content_hashtag">
-                    #justdoit 
+                    #{{article.ShortDescription}} 
                 </div>
-                <div class="news_content_hashtag">
-                    #paynixalive 
-                </div>
+                
                 <div class="news_content_image">
-                    <img class="photo" src="img/avatar.jpg">
+                    <img class="photo" src="{{article.ImageUrl}}">
                 </div>
             </div>
         </div>

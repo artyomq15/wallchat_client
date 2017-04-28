@@ -32,9 +32,9 @@ app.config(function($routeProvider, $locationProvider){
       templateUrl: "./app/templates/orders.html"
   });
 
-  $routeProvider.when("/news", {
-      controller: "newsController",
-      templateUrl: "./app/templates/news.html"
+  $routeProvider.when("/articles", {
+      controller: "articleController",
+      templateUrl: "./app/templates/articles.html"
   });
 
   $routeProvider.otherwise({ redirectTo: "/user"});

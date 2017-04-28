@@ -13,7 +13,7 @@ app.controller('userController', ['$scope', 'userService','authService', functio
         		$scope.user = $scope.users[i];
         	};
         };
-    var user = $scope.user; 
+        
 
     }, function (error) {
         //alert(error.data.message);

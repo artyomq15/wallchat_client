@@ -1,6 +1,7 @@
 'use strict';
-app.controller('ordersController', ['$scope', 'ordersService', function ($scope, ordersService) {
-
+app.controller('ordersController', ['$scope', 'ordersService','authService', function ($scope, ordersService, authService) {
+	$scope.authentication = authService.authentification;
+    console.log($scope.authentication);
     $scope.orders = [];
 
     ordersService.getOrders().then(function (results) {

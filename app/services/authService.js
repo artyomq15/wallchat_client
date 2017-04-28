@@ -62,7 +62,7 @@ app.factory('authService', ['$http', '$q', 'localStorageService', 'ngAuthSetting
       _authentification.isAuth = true;
       _authentification.userName = authData.userName;
       _authentification.refreshToken = authData.refreshToken;
-      console.log(_authentification + "fil");
+      console.log(_authentification.refreshToken + " fill");
     }
 
   };
