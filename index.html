@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html data-ng-app="authApp">
+    <head>        
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">   
+
+        <!-- Bootstrap Material Design -->
+        <link href="dist/css/bootstrap-material-design.css" rel="stylesheet">
+        <link href="dist/css/ripples.min.css" rel="stylesheet">
+
+        <!-- Page style -->
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+
+        
+
+        <title></title>
+    </head>
+    <body>
+
+        <div class="container" data-ng-controller="indexController">
+
+            <div class="row header_basic main_menu">
+                
+                <div class="col-xs-6 header_basic_user" data-ng-hide="!authentification.isAuth">
+                    <a href="#/user"><span class="glyphicon glyphicon-home"></span>{{authentification.userName}}</a>
+                </div>
+
+                <div data-ng-hide="!authentification.isAuth" class="col-xs-6">
+                    <a href="#/news">news</a>
+                </div>
+
+                <!--
+
+                <div class="col-xs-3 rightDiv" data-ng-hide="authentification.isAuth">
+                    <a href="#/signup">Sign Up</a>
+                </div>
+                <div class="col-xs-3 rightDiv" data-ng-hide="authentification.isAuth">
+                    <a href="#/login">Login</a>
+                </div>
+
+                <div data-ng-hide="!authentification.isAuth" class="col-xs-4">
+                    <a href="#/user">user</a>
+                </div>
+
+                -->
+            </div>
+             
+                
+        </div>
+        
+        <div class="container">
+            <div data-ng-view="">
+            </div>
+        </div>
+
+        <div class="container" data-ng-controller="indexController">
+            <div class="col-xs-6 rightDiv" data-ng-hide="!authentification.isAuth">
+                <a href="" data-ng-click="logOut()">Logout</a>
+            </div>
+        </div>
+        
+        
+
+
+
+        <!-- libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js"></script>
+        
+
+        <script src="node_modules/angular-local-storage/dist/angular-local-storage.min.js" charset="utf-8"></script>
+        <script src="node_modules/angular-loading-bar/build/loading-bar.min.js" charset="utf-8"></script>
+        <!-- app -->
+        <script src="app/app.js" charset="utf-8"></script>
+
+        <!-- services -->
+        <script src="app/services/authInterceptorService.js"></script>
+        <script src="app/services/authService.js"></script>
+        <script src="app/services/ordersService.js"></script>
+        <script src="app/services/userService.js"></script>
+
+        <!-- controllers -->
+        <script src="app/controllers/homeController.js" charset="utf-8"></script>
+        <script src="app/controllers/indexController.js"></script>
+        <script src="app/controllers/loginController.js"></script>
+        <script src="app/controllers/signupController.js"></script>
+        <script src="app/controllers/refreshController.js"></script>
+        <script src="app/controllers/ordersController.js"></script>
+        <script src="app/controllers/userController.js"></script>
+
+        <script type="text/javascript">
+            var app = {
+                initialize: function() {
+                    this.bindEvents();
+                },
+                bindEvents: function() {
+                    document.addEventListener('deviceready', this.onDeviceReady, true);
+                },
+
+                onDeviceReady: function() {
+                    angular.element(document).ready(function() {
+                        angular.bootstrap(document);
+                    });
+                },
+            };
+
+            app.initialize();
+        </script>
+    </body>
+</html>

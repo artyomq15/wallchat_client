@@ -1,0 +1,185 @@
+body{
+	font-family: Roboto thin;
+  background-color: #fff;
+	/*background-color: #258b5a;*/
+  color: #000;
+}
+p{
+  line-height: 20px;
+}
+a{
+  color: #000;
+  text-decoration: none;
+}
+a:hover{
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+}
+a:focus{
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+}
+.logo{
+  width: 100%;
+}
+.home_content{
+  margin-top: 50%;
+}
+.home{
+  margin: 10% 0;
+}
+.button_login{
+  background: #ff4b00;
+  border-radius: 5px;
+}
+.button_signup{
+  background: #f20013;
+  border-radius: 5px;
+}
+.header_basic{
+  text-align: center;
+  font-size: 25px;
+  border-bottom: solid 1px #ff4b00;
+}
+.header_basic_profile{
+  border-right: solid 1px #ff4b00;
+}
+.rightDiv{
+  text-align: center;
+  font-size: 25px;
+  float: right;
+  border: solid 1px #ff4b00;
+}
+.p_color{
+  color: #fff;
+}
+.is-focused{
+  color: #fff;
+}
+.mainpage{
+  padding: 10px;
+}
+.content{
+  padding: 20px;
+}
+.register{
+  color: #fff;
+}
+.settings{
+	float: right;
+}
+.personBlock{
+  width: 100%;
+}
+.personPhoto{
+}
+.personPhoto>.photo{
+  width: 100%; 
+  border-radius: 50%;
+}
+.personName{
+  margin-top: 10%;
+  margin-left: 5%;
+  width: 45%;
+  float: left;
+}
+.personName_name{
+  font-size: 25px;
+}
+.personName_surname{
+  font-size: 27px;
+  font-weight: bold;
+}
+.personName_city_year{
+  font-size: 14px;
+  font-weight: lighter;
+  opacity: 0.7;
+}
+.facultyBlock{
+  margin-top: 10px;
+  width: 100%;  
+  
+  text-align: center;
+}
+.faculty{
+  font-size: 23px;
+}
+.course{
+  font-size: 27px;
+  margin-top: 20px;
+}
+
+.menu{
+  line-height: 40px;
+  margin-top: 20px;
+  text-align: center;
+}
+.item_menu{
+  margin: 20px 0;
+}
+.item_menu_number{
+  font-size: 54px;
+}
+.item_menu_name{
+  font-size: 25px;
+}
+
+
+
+
+
+
+
+
+.left_news_class{
+  color: #000;
+}
+.news{
+  margin-bottom: 50px;
+}
+.news_author_photo>.photo{
+  width: 100%;
+  border-radius: 50%;
+}
+.news_author_info_name{
+  font-size: 21px;
+  font-weight: bold;
+}
+.news_author_info_date{
+  font-size: 14px;
+  opacity: 0.8;
+}
+.news_content{
+  margin-top: 10px;
+  font-size: 21px;
+}
+.news_content_text{
+}
+.news_content_hashtag{
+  float: left;
+  color: #258b5a;
+}
+.news_content_image{
+  margin: 20px 0;
+}
+.news_content_image>.photo{
+  width: 100%;
+}
+
+
+
+.content_signin{
+  margin: 0 auto;
+}
+
+
+
+
+.input_new{
+  margin-bottom: 70px;
+}
+.news_send_button{
+  float: right;
+}
