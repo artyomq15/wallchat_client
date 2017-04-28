@@ -32,10 +32,11 @@ app.factory('authService', ['$http', '$q', 'localStorageService', 'ngAuthSetting
 
       _authentification.isAuth = true;
       _authentification.userName = loginData.userName;
+      
 
       deferred.resolve(response);
     }).error(function (err, status) {
-      //_logOut();
+      _logOut();
       deferred.reject(err);
     });
 
@@ -48,6 +49,8 @@ app.factory('authService', ['$http', '$q', 'localStorageService', 'ngAuthSetting
     _authentification.isAuth = false;
     _authentification.userName = "";
     _authentification.refreshToken = "";
+
+    console.log('0');
 
   };
 

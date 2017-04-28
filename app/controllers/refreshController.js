@@ -9,14 +9,14 @@ app.controller('refreshController', ['$scope', '$location', 'localStorageService
 
   $scope.refreshToken = function () {
       var authData = localStorageService.get('authorizationData');
-      var oldRefreshToken = authData.refreshToken;
+      var oldRefreshToken = authData.refreshToken;  
 
       authService.refreshToken().then(function (response) {
           $scope.tokenRefreshed = true;
           $scope.tokenResponse = response;
 
           // console.log(oldRefreshToken);
-          authService.deleteRefreshToken(oldRefreshToken);
+          //authService.deleteRefreshToken(oldRefreshToken);
       },
        function (err) {
            $location.path('/login');
