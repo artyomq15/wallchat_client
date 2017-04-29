@@ -25,14 +25,14 @@
 
         <div class="container" data-ng-controller="indexController">
 
-            <div class="row header_basic main_menu">
+            <div class="row main_menu">
                 
-                <div class="col-xs-6 header_basic_user" data-ng-hide="!authentification.isAuth">
-                    <a href="#/user"><span class="glyphicon glyphicon-home"></span>{{authentification.userName}}</a>
+                <div class="col-xs-6 header_item" data-ng-hide="!authentification.isAuth">
+                    <a href="#/user">Home</a>
                 </div>
 
-                <div data-ng-hide="!authentification.isAuth" class="col-xs-6">
-                    <a href="#/articles">news</a>
+                <div data-ng-hide="!authentification.isAuth" class="col-xs-6 header_item">
+                    <a href="#/articles">News</a>
                 </div>
 
                 <!--
@@ -60,7 +60,7 @@
         </div>
 
         <div class="container" data-ng-controller="indexController">
-            <div class="col-xs-6 rightDiv" data-ng-hide="!authentification.isAuth">
+            <div class="col-xs-6 button_logout button_border" data-ng-hide="!authentification.isAuth">
                 <a href="" data-ng-click="logOut()">Logout</a>
             </div>
         </div>

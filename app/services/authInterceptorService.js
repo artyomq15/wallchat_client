@@ -31,7 +31,7 @@ app.factory('authInterceptorService', ['$q', '$injector', '$location', 'localSto
 
       //authService.logOut();
 
-      $location.path('/home');
+      $location.path('/login');
     }
     return $q.reject(rejection);
   }

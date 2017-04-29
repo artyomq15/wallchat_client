@@ -4,7 +4,7 @@
 
         <div class="input_new">
            <textarea class="form-control" data-ng-model="article.Text" name="content" placeholder="Что у вас нового?"></textarea>
-            <a href="javascript:void(0)" data-ng-click="sendArticle()" class="btn btn-raised btn-primary news_send_button">Отправить</a>
+            <a href="javascript:void(0)" data-ng-click="sendArticle()" class="btn button_send_article button_border">Отправить</a>
         </div>
 
 
@@ -32,6 +32,9 @@
             <div class="news_content">
                 <div class="news_content_text">
                     {{article.Text}}
+                </div>
+                <div class="news_content_hashtag">
+                    #{{article.Header}} 
                 </div>
                 <div class="news_content_hashtag">
                     #{{article.ShortDescription}} 

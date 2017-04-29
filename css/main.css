@@ -12,6 +12,7 @@ a{
   text-decoration: none;
 }
 a:hover{
+  display: block;
   color: #000;
   text-decoration: none;
   font-weight: bold;
@@ -21,36 +22,49 @@ a:focus{
   text-decoration: none;
   font-weight: bold;
 }
+
 .logo{
   width: 100%;
 }
+
 .home_content{
-  margin-top: 50%;
+  margin-top: 25%;
 }
 .home{
-  margin: 10% 0;
 }
 .button_login{
-  background: #ff4b00;
+  width: 100%;
+  background: linear-gradient(to top right, #33cc66, #3399ff);
   border-radius: 5px;
 }
 .button_signup{
-  background: #f20013;
+  width: 100%;
+  background: linear-gradient(to top right, #66cc99, #6699ff);
   border-radius: 5px;
 }
-.header_basic{
+.main_menu{
+  box-shadow: 0 0 10px rgba(0,0,0,0.5)
+}
+.header_item{
   text-align: center;
   font-size: 25px;
-  border-bottom: solid 1px #ff4b00;
+  padding: 5px 0;
 }
-.header_basic_profile{
-  border-right: solid 1px #ff4b00;
+.button_send_article{
+  width: 100%;
 }
-.rightDiv{
+.button_border{
+  border-top: solid 1px #6699ff;
+  border-right: solid 1px #99cccc;
+  border-bottom: solid 1px #66cc99;
+  border-left: solid 1px #99cc99;
+}
+.button_logout{
+  margin-bottom: 5px;
   text-align: center;
   font-size: 25px;
   float: right;
-  border: solid 1px #ff4b00;
+  
 }
 .p_color{
   color: #fff;
@@ -178,7 +192,7 @@ a:focus{
 
 
 .input_new{
-  margin-bottom: 70px;
+  margin: 25px 0;
 }
 .news_send_button{
   float: right;
