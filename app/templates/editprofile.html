@@ -1,0 +1,32 @@
+
+<div class="row home_content">
+    <div class="col-xs-1">
+        &nbsp;
+    </div>
+    <div class="col-xs-10">
+        
+
+
+            <form class="form-login" role="form">
+                <h2 class="form-login-heading">Edit profile</h2>
+
+                <label for="555" class="control-label">Name</label>
+                <input type="text" class="form-control" id="555" data-ng-model="profileInfo.Name" placeholder="{{user.Name}}" required autofocus>
+                <label for="555" class="control-label">Surname</label>
+                <input type="text" class="form-control" id="555" data-ng-model="profileInfo.Surname" placeholder="{{user.Surname}}" required>
+                
+                <a href="javascript:void(0)" class="btn button_signup" data-ng-click="editUserProfile()">OK</a>
+
+
+                
+                <div data-ng-hide="message == ''" data-ng-class="(editedSuccessfully) ? 'alert alert-success' : 'alert alert-danger'">
+                    {{message}}
+                </div>
+            </form>
+
+    </div>
+    <div class="col-xs-1">
+        &nbsp;
+    </div>
+
+</div>
