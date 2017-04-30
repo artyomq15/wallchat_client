@@ -8,7 +8,7 @@
         </div>
 
 
-        <div class="news" ng-repeat="article in articles | orderBy:'PublishDate':reverse">
+        <div class="news" ng-repeat="article in articles | orderBy:'-Id'">
             <div class="news_author">
                 <div class="row">
                     <div class="col-xs-4 news_author_photo">
@@ -25,7 +25,7 @@
                         </div>
                     </div>
                     <div class="col-xs-1">
-                        <span data-ng-click="deleteArticle(article.Id)" class="glyphicon glyphicon-remove"></span>
+                        <span data-ng-hide="authentification.userId != article.UserId" data-ng-click="deleteArticle(article.Id)" class="glyphicon glyphicon-remove"></span>
                     </div>  
                 </div>
             </div>

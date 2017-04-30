@@ -1,19 +1,20 @@
 'use strict';
-app.controller('articleController', ['$scope', 'articleService','authService', function ($scope, articleService, authService) {
-	$scope.authentication = authService.authentification;
-    console.log($scope.authentication);
+app.controller('articleController', ['$scope','$route', 'articleService','authService', function ($scope, $route, articleService, authService) {
+	$scope.authentification = authService.authentification;
+    console.log($scope.authentification);
     $scope.articles = [];
 
-    
-
+    var userId = $scope.authentification.userId;
+    console.log($scope.authentification.userId);
     $scope.article = {
-    	Text: "0",
-    	Header: "0",
-    	ShortDescription:"0",
-    	ImageUrl: "0"
+    	Text: null,
+    	Header: null,
+    	ShortDescription: null,
+    	ImageUrl: null,
+        UserId: null
     };
     
-
+    $scope.article.UserId = userId;
 
 
 
@@ -31,6 +32,7 @@ app.controller('articleController', ['$scope', 'articleService','authService', f
     	articleService.sendArticle($scope.article).then(function (response){
     		$scope.message = "Article sended";
     		console.log(response + ' '+$scope.message);
+            $route.reload();
     	},
     	function (response){
     		console.log("error" + response);
@@ -42,7 +44,7 @@ app.controller('articleController', ['$scope', 'articleService','authService', f
     	articleService.deleteArticle(articleId).then(function (response){
     		$scope.message = "Article " + articleId + " deleted";
     		console.log(response + ' '+$scope.message);
-    		$window.location.reload();
+    		$route.reload();
     	},
     	function (response){
     		console.log("error" + response);

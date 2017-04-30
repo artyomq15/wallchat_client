@@ -8,7 +8,8 @@ app.factory('authService', ['$http', '$q', 'localStorageService', 'ngAuthSetting
 
   var _authentification = {
     isAuth: false,
-    userName: ""
+    userName: "",
+    userId:""
   };
 
   var _saveRegistration = function (registration) {
@@ -32,7 +33,8 @@ app.factory('authService', ['$http', '$q', 'localStorageService', 'ngAuthSetting
 
       _authentification.isAuth = true;
       _authentification.userName = loginData.userName;
-      
+      console.log("+++" + response.userId);
+      _authentification.userId = response.userId;
 
       deferred.resolve(response);
     }).error(function (err, status) {
@@ -48,19 +50,22 @@ app.factory('authService', ['$http', '$q', 'localStorageService', 'ngAuthSetting
 
     _authentification.isAuth = false;
     _authentification.userName = "";
+    _authentification.userId = "";
     _authentification.refreshToken = "";
 
-    console.log('0');
+    
 
   };
 
   var _fillAuthData = function () {
 
     var authData = localStorageService.get('authorizationData');
+    console.log(authData);
     if(authData)
     {
       _authentification.isAuth = true;
       _authentification.userName = authData.userName;
+      _authentification.userId = authData.userId;
       _authentification.refreshToken = authData.refreshToken;
       console.log(_authentification.refreshToken + " fill");
     }
@@ -78,7 +83,7 @@ app.factory('authService', ['$http', '$q', 'localStorageService', 'ngAuthSetting
       localStorageService.remove('authorizationData');
 
       $http.post(serviceBase + 'token', data, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).success(function (response) {
-          localStorageService.set('authorizationData', { token: response.access_token, userName: response.userName, refreshToken: response.refresh_token });
+          localStorageService.set('authorizationData', { token: response.access_token, userName: response.userName, userId : response.userId, refreshToken: response.refresh_token });
           _fillAuthData();
           deferred.resolve(response);
       }).error(function (err, status) {
