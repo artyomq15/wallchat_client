@@ -8,11 +8,7 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         
         <!-- Bootstrap -->
-        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">   
-
-        <!-- Bootstrap Material Design -->
-        <link href="dist/css/bootstrap-material-design.css" rel="stylesheet">
-        <link href="dist/css/ripples.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">  
 
         <!-- Page style -->
         <link rel="stylesheet" type="text/css" href="css/main.css">
@@ -32,7 +28,7 @@
                 </div>
 
                 <div data-ng-hide="!authentification.isAuth" class="col-xs-6 header_item">
-                    <a href="#/articles">News</a>
+                    <a href="#/articles">Wall</a>
                 </div>
 
                 <!--
@@ -59,11 +55,7 @@
             </div>
         </div>
 
-        <div class="container" data-ng-controller="indexController">
-            <div class="col-xs-6 button_logout button_border" data-ng-hide="!authentification.isAuth">
-                <a href="" data-ng-click="logOut()">Logout</a>
-            </div>
-        </div>
+        
         
         
 

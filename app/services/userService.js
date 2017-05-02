@@ -4,9 +4,9 @@ app.factory('userService', ['$http', 'ngAuthSettings', function ($http, ngAuthSe
 	var serviceBase = ngAuthSettings.apiServiceBaseUri;
 	var userServiceFactory = {};
 	
-	var _getUser = function () {
+	var _getUser = function (userId) {
 
-	return $http.get(serviceBase + "api/users").then(function (results) {
+	return $http.get(serviceBase + "api/users/"+userId).then(function (results) {
 	  return results;
 	});
 

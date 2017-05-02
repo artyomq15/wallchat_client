@@ -11,20 +11,23 @@
         <div class="news" ng-repeat="article in articles | orderBy:'-Id'">
             <div class="news_author">
                 <div class="row">
-                    <div class="col-xs-4 news_author_photo">
+                    <div class="col-xs-3 news_author_photo">
                         <img class="photo" src="img/avatar.jpg">
                     </div>
                     <div class="col-xs-7 news_author_info">
                         <div class="row">
-                            <div class="news_author_info_name">
+                            <div data-ng-show="article.User.Name || article.User.Surname" class="news_author_info_name">
+                                {{article.User.Name}} {{article.User.Surname}}
+                            </div>
+                            <div data-ng-hide="article.User.Name || article.User.Surname" class="news_author_info_name">
                                 {{article.User.UserName}}
                             </div>
                             <div class="news_author_info_date">
-                                {{article.PublishDate}}
+                                {{article.PublishDate | date:"dd MMMM yyyy 'at' HH:mm": 'UTC'}}
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-1">
+                    <div class="col-xs-2">
                         <span data-ng-hide="authentification.userId != article.UserId" data-ng-click="deleteArticle(article.Id)" class="glyphicon glyphicon-remove"></span>
                     </div>  
                 </div>
@@ -33,14 +36,12 @@
                 <div class="news_content_text">
                     {{article.Text}}
                 </div>
-                <div class="news_content_hashtag">
-                    #{{article.Header}} 
-                </div>
-                <div class="news_content_hashtag">
-                    #{{article.ShortDescription}} 
+                
+                <div data-ng-show="article.ShortDescription" class="news_content_hashtag">
+                    {{article.ShortDescription}} 
                 </div>
                 
-                <div class="news_content_image">
+                <div data-ng-show="article.ImageUrl" class="news_content_image">
                     <img class="photo" src="{{article.ImageUrl}}">
                 </div>
             </div>

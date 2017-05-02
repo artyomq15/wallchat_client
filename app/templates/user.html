@@ -1,21 +1,30 @@
-    <div class="container mainpage">
+    <div class="mainpage">
             
             <div  class=" settings"><a href="#/editprofile"><img src="img/settings.png"></a></div>
-            
+           
                 
             <div class="row">
                 <div class="col-xs-12 personBlock">
                     <div class="row">
-                        <div class="col-xs-6 personPhoto"><img class="photo" src="img/avatar.jpg"></div>
-                        <div class="col-xs-6 personName">
+                        <div class="col-xs-6 col-xs-offset-3 personPhoto"><img class="photo" src="img/avatar.jpg"></div>
+                        <div class="col-xs-12 personName afterBlock">
                             <p class="personName_name">{{user.Name}}</p>
                             <p class="personName_surname">{{user.Surname}}</p>
-                            <p class="personName_city_year">Копыль, 45 лет</p>
+                            <p data-ng-show="user.DateBirth" class="personName_city_year">{{user.DateBirth | date:"dd.MM.yyyy"}}</p>                           
+                        </div>
+                        <div data-ng-show="user.Email || user.PhoneNumber" class="col-xs-12">
+                            <p class="personBlock_criteria">Контакты</p>
+                            <p data-ng-show="user.Email" class="personBlock_contacts">Email: {{user.Email}}</p>
+                            <p data-ng-show="user.PhoneNumber" class="personBlock_contacts">Phone: {{user.PhoneNumber}}</p>
+                        </div>
+                        <div data-ng-show="user.Information" class="col-xs-12">
+                            <p class="personBlock_criteria">Информация</p>
+                            <p data-ng-show="user.Information" class="personBlock_info">{{user.Information}}</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-xs-12 facultyBlock">
+                <!--<div class="col-xs-12 facultyBlock">
                     <div class="row">
                         <div class="col-xs-12 faculty">
                             Механико-математический факультет
@@ -72,9 +81,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>-->
             </div>
         </div>
+
 
 
         

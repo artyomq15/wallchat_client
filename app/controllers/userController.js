@@ -15,21 +15,20 @@ app.controller('userController', ['$scope', 'userService','authService', functio
         Id: null,
         UserName: null,
         Name:"",
-        Surname:""
+        Surname:"",
+        DateBirth:"12.04.1998",
+        Email: null,
+        PhoneNumber: null,
+        Information: null
     }
     $scope.profileInfo.Id = userId;
     $scope.profileInfo.UserName = userName;
 
-    userService.getUser().then(function (results) {
+    userService.getUser(userId).then(function (results) {
 
-        $scope.users = results.data;
-        console.log($scope.users);
-        for (var i = 0; i < $scope.users.length; i++) {
-        	if ($scope.authentification.userName == $scope.users[i].UserName) {
-
-        		$scope.user = $scope.users[i];
-        	};
-        };
+        $scope.user = results.data;
+        console.log($scope.user);
+        
     var user = $scope.user; 
 
     }, function (error) {
@@ -44,6 +43,7 @@ app.controller('userController', ['$scope', 'userService','authService', functio
             console.log(response + ' '+$scope.message);
         },
         function (response){
+            $scope.editedSuccessfully = false;
             console.log("error " + response);
         });
     };

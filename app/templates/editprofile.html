@@ -1,5 +1,5 @@
 
-<div class="row home_content">
+<div class="row">
     <div class="col-xs-1">
         &nbsp;
     </div>
@@ -14,6 +14,19 @@
                 <input type="text" class="form-control" id="555" data-ng-model="profileInfo.Name" placeholder="{{user.Name}}" required autofocus>
                 <label for="555" class="control-label">Surname</label>
                 <input type="text" class="form-control" id="555" data-ng-model="profileInfo.Surname" placeholder="{{user.Surname}}" required>
+
+
+
+
+
+                <label for="555" class="control-label">Email</label>
+                <input type="email" class="form-control" id="555" data-ng-model="profileInfo.Email" placeholder="{{user.Email}}" required>
+
+                <label for="555" class="control-label">PhoneNumber</label>
+                <input type="text" class="form-control" id="555" data-ng-model="profileInfo.PhoneNumber" placeholder="{{user.PhoneNumber}}" required>
+
+                <label for="555" class="control-label">Information</label>
+                <textarea class="form-control" data-ng-model="profileInfo.Information" name="content" placeholder="{{user.Information}}"></textarea>
                 
                 <a href="javascript:void(0)" class="btn button_signup" data-ng-click="editUserProfile()">OK</a>
 
@@ -24,9 +37,22 @@
                 </div>
             </form>
 
+
+            <div data-ng-controller="indexController">
+            <div class="col-xs-12 button_logout button_border_exit" data-ng-hide="!authentification.isAuth">
+                <a href="" data-ng-click="logOut()">Logout</a>
+            </div>
+        </div>
+
     </div>
+
+     
+
     <div class="col-xs-1">
         &nbsp;
     </div>
+
+
+   
 
 </div>

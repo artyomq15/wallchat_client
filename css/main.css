@@ -8,6 +8,7 @@ p{
   line-height: 20px;
 }
 a{
+  display: block;
   color: #000;
   text-decoration: none;
 }
@@ -31,13 +32,17 @@ a:focus{
   margin-top: 25%;
 }
 .home{
+  margin-bottom: 25px;
 }
+
 .button_login{
+  margin-top: 25px;
   width: 100%;
   background: linear-gradient(to top right, #33cc66, #3399ff);
   border-radius: 5px;
 }
 .button_signup{
+  margin-top: 25px;
   width: 100%;
   background: linear-gradient(to top right, #66cc99, #6699ff);
   border-radius: 5px;
@@ -59,12 +64,19 @@ a:focus{
   border-bottom: solid 1px #66cc99;
   border-left: solid 1px #99cc99;
 }
+
+.button_border_exit{
+  border:solid 1px red;
+}
 .button_logout{
-  margin-bottom: 5px;
+  margin-top: 50px;
   text-align: center;
   font-size: 25px;
-  float: right;
   
+}
+
+.form-login>input{
+  margin-bottom: 15px;
 }
 .p_color{
   color: #fff;
@@ -84,6 +96,9 @@ a:focus{
 .settings{
 	float: right;
 }
+.afterBlock{
+  margin-bottom: 20px; 
+}
 .personBlock{
   width: 100%;
 }
@@ -94,9 +109,8 @@ a:focus{
   border-radius: 50%;
 }
 .personName{
-  margin-top: 10%;
-  width: 45%;
-  float: left;
+  text-align: center;
+  margin-top: 5%;
 }
 .personName_name{
   font-size: 25px;
@@ -106,9 +120,20 @@ a:focus{
   font-weight: bold;
 }
 .personName_city_year{
-  font-size: 14px;
+  font-size: 18px;
   font-weight: lighter;
+  opacity: 1;
+  word-wrap: break-word;
+}
+.personBlock_criteria{
   opacity: 0.7;
+}
+.personBlock_contacts{
+  font-size: 22px;
+}
+.personBlock_info{
+  font-size: 22px;
+  word-wrap: break-word;
 }
 .facultyBlock{
   margin-top: 10px;
