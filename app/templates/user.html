@@ -1,22 +1,38 @@
-    <div class="mainpage">
+    <div data-ng-hide="ready">
+        <img src="img/pre.svg">
+    </div>
+    <div data-ng-show="ready" class="mainpage">
             
-            <div  class=" settings"><a href="#/editprofile"><img src="img/settings.png"></a></div>
+            <div  data-ng-show="user.Id==authentification.userId" class=" settings"><a href="#/editprofile"><img src="img/settings.png"></a></div>
            
                 
             <div class="row">
                 <div class="col-xs-12 personBlock">
                     <div class="row">
-                        <div class="col-xs-6 col-xs-offset-3 personPhoto"><img class="photo" src="img/avatar.jpg"></div>
+                        <div class="col-xs-6 col-xs-offset-3 personPhoto"><img class="photo" src="http://wallpapercave.com/wp/g6DWiE6.png"></div>
                         <div class="col-xs-12 personName afterBlock">
                             <p class="personName_name">{{user.Name}}</p>
                             <p class="personName_surname">{{user.Surname}}</p>
-                            <p data-ng-show="user.DateBirth" class="personName_city_year">{{user.DateBirth | date:"dd.MM.yyyy"}}</p>                           
+                            <p data-ng-show="user.DateBirth" class="personName_city_year">{{user.DateBirth | date:"dd.MM.yyyy"}}</p> 
+
                         </div>
-                        <div data-ng-show="user.Email || user.PhoneNumber" class="col-xs-12">
-                            <p class="personBlock_criteria">Контакты</p>
-                            <p data-ng-show="user.Email" class="personBlock_contacts">Email: {{user.Email}}</p>
+                        <div data-ng-controller="subscriptionsController" class="col-xs-6 col-xs-offset-3">
+                            <a href="#/user/{{user.Id}}/subscribers">{{subscribers.length}} Подписки</a>
+                            <a data-ng-hide="user.Id==authentification.userId" href="javascript:void(0)" class="btn button_login" data-ng-click="subscribe(user.Id)">Подписаться</a>
+                            <a data-ng-hide="user.Id==authentification.userId" href="javascript:void(0)" class="btn button_login" data-ng-click="unsubscribe(user.Id)">Отписаться</a>
+                        </div>
+                        <div data-ng-show="user.Email" class="col-xs-12">
+                            <p class="personBlock_criteria">Email</p>
+                            <p data-ng-show="user.Email" class="personBlock_contacts">{{user.Email}}</p>
+                           
+                        </div>
+
+                        <div data-ng-show="user.PhoneNumber" class="col-xs-12">
+                            <p class="personBlock_criteria">Phone</p>
                             <p data-ng-show="user.PhoneNumber" class="personBlock_contacts">Phone: {{user.PhoneNumber}}</p>
                         </div>
+
+
                         <div data-ng-show="user.Information" class="col-xs-12">
                             <p class="personBlock_criteria">Информация</p>
                             <p data-ng-show="user.Information" class="personBlock_info">{{user.Information}}</p>

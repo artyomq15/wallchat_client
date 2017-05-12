@@ -24,7 +24,7 @@
             <div class="row main_menu">
                 
                 <div class="col-xs-6 header_item" data-ng-hide="!authentification.isAuth">
-                    <a href="#/user">Home</a>
+                    <a href="#/user/{{authentification.userId}}">Home</a>
                 </div>
 
                 <div data-ng-hide="!authentification.isAuth" class="col-xs-6 header_item">
@@ -77,6 +77,7 @@
         <script src="app/services/ordersService.js"></script>
         <script src="app/services/userService.js"></script>
         <script src="app/services/articleService.js"></script>
+        <script src="app/services/subscriptionsService.js"></script>
 
         <!-- controllers -->
         <script src="app/controllers/homeController.js" charset="utf-8"></script>
@@ -87,6 +88,7 @@
         <script src="app/controllers/ordersController.js"></script>
         <script src="app/controllers/userController.js"></script>
         <script src="app/controllers/articleController.js"></script>
+        <script src="app/controllers/subscriptionsController.js"></script>
 
         <script type="text/javascript">
             var app = {

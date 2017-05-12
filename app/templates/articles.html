@@ -4,6 +4,10 @@
 
         <div class="input_new">
            <textarea class="form-control" data-ng-model="article.Text" name="content" placeholder="Что у вас нового?"></textarea>
+
+           <input type="text" class="form-control" id="555" data-ng-model="article.ShortDescription" placeholder="тэги" >
+
+
             <a href="javascript:void(0)" data-ng-click="sendArticle()" class="btn button_send_article button_border">Отправить</a>
         </div>
 
@@ -12,15 +16,20 @@
             <div class="news_author">
                 <div class="row">
                     <div class="col-xs-3 news_author_photo">
-                        <img class="photo" src="img/avatar.jpg">
+                        <a href="#/user/{{article.UserId}}"><img class="photo" src="img/avatar.jpg"></a>
                     </div>
                     <div class="col-xs-7 news_author_info">
                         <div class="row">
                             <div data-ng-show="article.User.Name || article.User.Surname" class="news_author_info_name">
-                                {{article.User.Name}} {{article.User.Surname}}
+                                <a href="#/user/{{article.UserId}}">
+                                    {{article.User.Name}} {{article.User.Surname}}
+                                </a>
+                                
                             </div>
                             <div data-ng-hide="article.User.Name || article.User.Surname" class="news_author_info_name">
+                                <a href="#/user/{{article.UserId}}">
                                 {{article.User.UserName}}
+                                </a>
                             </div>
                             <div class="news_author_info_date">
                                 {{article.PublishDate | date:"dd MMMM yyyy 'at' HH:mm": 'UTC'}}

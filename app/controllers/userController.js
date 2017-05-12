@@ -1,19 +1,19 @@
 'use strict';
-app.controller('userController', ['$scope', 'userService','authService', function ($scope, userService, authService) {
-	
+app.controller('userController', ['$scope', 'userService','authService', '$routeParams', function ($scope, userService, authService, $routeParams) {
+	$scope.ready = false;
     
     $scope.authentification = authService.authentification;
     console.log($scope.authentification);
 
-    var userId = $scope.authentification.userId;
+    var _userId = $scope.authentification.userId;
     var userName = $scope.authentification.userName;
 
     $scope.users = [];
     $scope.editedSuccessfully = false;
     $scope.message = "";
     $scope.profileInfo = {
-        Id: null,
         UserName: null,
+        ProfileImageUrl: null,
         Name:"",
         Surname:"",
         DateBirth:"12.04.1998",
@@ -21,13 +21,21 @@ app.controller('userController', ['$scope', 'userService','authService', functio
         PhoneNumber: null,
         Information: null
     }
-    $scope.profileInfo.Id = userId;
+    $scope.profileInfo.Id = _userId;
     $scope.profileInfo.UserName = userName;
+
+
+    var userId = $routeParams["userId"]; 
+    if (userId==undefined) {
+        userId = _userId;
+    };
+    console.log(userId);
 
     userService.getUser(userId).then(function (results) {
 
         $scope.user = results.data;
         console.log($scope.user);
+        $scope.ready = true;
         
     var user = $scope.user; 
 

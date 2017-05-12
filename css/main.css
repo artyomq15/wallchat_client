@@ -177,7 +177,7 @@ a:focus{
 .news{
   margin-bottom: 50px;
 }
-.news_author_photo>.photo{
+.news_author_photo .photo{
   width: 100%;
   border-radius: 50%;
 }

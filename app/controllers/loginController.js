@@ -11,7 +11,7 @@ app.controller('loginController', ['$scope', '$location', 'authService', functio
   $scope.login = function () {
     authService.login($scope.loginData).then(function (response) {
 
-      $location.path('/user');
+      $location.path('/user/'+ response.userId);
 
     },
     function (err) {
