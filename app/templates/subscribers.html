@@ -1,0 +1,19 @@
+<div id="left_news" class="left_news_class">
+    <div  class="container">                
+       <div class="row">
+            <div ng-repeat="subscriber in subscribesInfo">
+                <p>{{subscriber.UserName}} | {{subscriber.Name}} {{subscriber.Surname}}</p>
+                <div data-ng-hide="subscriber.Id == authentification.userId">
+
+                    <a data-ng-hide="subscriber.isSubsscribe"  class="button_login" data-ng-click="subscribe(subscriber.Id)">Подписаться</a>
+
+                    <a data-ng-show="subscriber.isSubsscribe"  class="button_login" data-ng-click="unsubscribe(subscriber.Id)">Отписаться</a>
+
+
+                </div>
+                
+            </div>
+       </div>
+    </div>
+</div>
+

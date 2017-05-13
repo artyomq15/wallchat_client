@@ -1,17 +1,30 @@
 <div id="left_news" class="left_news_class">
     <div  class="container">                
        <div class="row">
-            <div ng-repeat="subscriber in subscribesInfo">
-                <p>{{subscriber.UserName}} | {{subscriber.Name}} {{subscriber.Surname}}</p>
-                <div data-ng-hide="subscriber.Id == authentification.userId">
+            <div ng-repeat="subscriber in subscribesInfo" >
+                   
+                        <div data-ng-show="subscriber.Name || subscriber.Surname" class="col-xs-8 subscribers">
+                            <a href="#/user/{{subscriber.Id}}">
+                                {{subscriber.Name}} {{subscriber.Surname}}
+                            </a>
+                            
+                        </div>
+                        <div data-ng-hide="subscriber.Name || subscriber.Surname" class="col-xs-8 subscribers">
+                            <a href="#/user/{{subscriber.Id}}">
+                            {{subscriber.UserName}}
+                            </a>
+                        </div>
 
-                    <a data-ng-hide="subscriber.isSubsscribe" href="javascript:void(0)" class="btn button_login" data-ng-click="subscribe(subscriber.Id)">Подписаться</a>
 
-                    <a data-ng-show="subscriber.isSubsscribe" href="javascript:void(0)" class="btn button_login" data-ng-click="unsubscribe(subscriber.Id)">Отписаться</a>
+                        
+                        <div data-ng-hide="subscriber.Id == authentification.userId" class="col-xs-4 subscribers">
+
+                            <a data-ng-hide="subscriber.isSubsscribe"  class="button_subscribe" data-ng-click="subscribe(subscriber.Id)">Подписаться</a>
+
+                            <a data-ng-show="subscriber.isSubsscribe"  class="button_unsubscribe button_border" data-ng-click="unsubscribe(subscriber.Id)">Отписаться</a>
 
 
-                </div>
-                
+                    </div>
             </div>
        </div>
     </div>

@@ -18,7 +18,13 @@
                         </div>
                         <div class="col-xs-6 col-xs-offset-3">
                             <a href="#/user/{{user.Id}}/subscribes">{{subscribes.length}} Подписки</a>
-                            
+                        </div>
+
+                        <div class="col-xs-6 col-xs-offset-3" data-ng-hide="user.Id == authentification.userId">
+
+                            <a data-ng-hide="user.isSubsscribe" class="button_login" data-ng-click="subscribe(user.Id)">Подписаться</a>
+
+                            <a data-ng-show="user.isSubsscribe" class="button_login" data-ng-click="unsubscribe(user.Id)">Отписаться</a>
 
 
                         </div>

@@ -36,17 +36,43 @@ a:focus{
 }
 
 .button_login{
+  text-align: center;
+  padding: 5px;
   margin-top: 25px;
   width: 100%;
   background: linear-gradient(to top right, #33cc66, #3399ff);
   border-radius: 5px;
 }
 .button_signup{
+
+  text-align: center;
+  padding: 5px;
   margin-top: 25px;
   width: 100%;
   background: linear-gradient(to top right, #66cc99, #6699ff);
   border-radius: 5px;
 }
+
+.button_subscribe{
+  font-size: 12px;
+  text-align: center;
+  padding: 5px;
+  width: 100%;
+  background: linear-gradient(to top right, #33cc66, #3399ff);
+  border-radius: 5px;
+}
+
+.button_unsubscribe{
+  font-size: 12px;
+  text-align: center;
+  padding: 5px;
+  width: 100%;
+  /*background: linear-gradient(to top right, #3399ff, #33cc66);*/
+  border-radius: 5px;
+}
+
+
+
 .main_menu{
   box-shadow: 0 0 10px rgba(0,0,0,0.5)
 }
@@ -69,6 +95,9 @@ a:focus{
   border:solid 1px red;
 }
 .button_logout{
+
+  text-align: center;
+  padding: 5px;
   margin-top: 50px;
   text-align: center;
   font-size: 25px;
@@ -166,7 +195,11 @@ a:focus{
 
 
 
-
+.subscribers{ 
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
 
 
 

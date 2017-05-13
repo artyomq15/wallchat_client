@@ -55,7 +55,7 @@ app.controller('userController', ['$scope', 'userService','authService','subscri
         
         
         
-    var user = $scope.user; 
+        var user = $scope.user; 
 
     }, function (error) {
         //alert(error.data.message);
@@ -66,6 +66,7 @@ app.controller('userController', ['$scope', 'userService','authService','subscri
             subscriptionsService.getSubscribes(userId).then(function (results){
             $scope.subscribes = results.data;
             console.log($scope.subscribes);
+
             $scope.getSubscribesInfo();
         },
         function (error){
@@ -76,6 +77,7 @@ app.controller('userController', ['$scope', 'userService','authService','subscri
     $scope.getSubscribesInfo = function (){
         userService.getAllUsers().then(function (results){
             $scope.users = results.data;
+
             console.log($scope.users);
 
             subscriptionsService.getMySubscribes().then(function (results){
@@ -85,25 +87,36 @@ app.controller('userController', ['$scope', 'userService','authService','subscri
 
             for (var i=0; i<$scope.subscribes.length;i++){
                 for (var j = 0; j < $scope.users.length; j++) {
-                    if ($scope.subscribes[i].UserId == $scope.users[j].Id) {
 
+                    if ($scope.subscribes[i].UserId == $scope.users[j].Id) {
                         
                         for (var k = 0; k < $scope.mySubscribes.length; k++) {
                             if ($scope.mySubscribes[k].UserId == $scope.users[j].Id) {
 
                                 $scope.users[j].isSubsscribe = true;  
+                                break;
 
                             };
-                        };
-
-                                                      
-                        
+                        };                  
                         $scope.subscribesInfo.push($scope.users[j]);
+                        break;
                     }
+
                 };
             };
-
+            console.log("subsinfo");
             console.log($scope.subscribesInfo);
+
+            if ($scope.user.Id != $scope.authentification.userId) {
+                for (var k = 0; k < $scope.mySubscribes.length; k++) {
+                        if ($scope.mySubscribes[k].UserId == $scope.user.Id) {
+                            console.log("suuuubsinfo");
+                            $scope.user.isSubsscribe = true;  
+                            break;
+
+                    };
+                }; 
+            };
 
             $scope.ready = true;
 
