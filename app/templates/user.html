@@ -16,10 +16,11 @@
                             <p data-ng-show="user.DateBirth" class="personName_city_year">{{user.DateBirth | date:"dd.MM.yyyy"}}</p> 
 
                         </div>
-                        <div data-ng-controller="subscriptionsController" class="col-xs-6 col-xs-offset-3">
-                            <a href="#/user/{{user.Id}}/subscribers">{{subscribers.length}} Подписки</a>
-                            <a data-ng-hide="user.Id==authentification.userId" href="javascript:void(0)" class="btn button_login" data-ng-click="subscribe(user.Id)">Подписаться</a>
-                            <a data-ng-hide="user.Id==authentification.userId" href="javascript:void(0)" class="btn button_login" data-ng-click="unsubscribe(user.Id)">Отписаться</a>
+                        <div class="col-xs-6 col-xs-offset-3">
+                            <a href="#/user/{{user.Id}}/subscribes">{{subscribes.length}} Подписки</a>
+                            
+
+
                         </div>
                         <div data-ng-show="user.Email" class="col-xs-12">
                             <p class="personBlock_criteria">Email</p>

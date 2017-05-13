@@ -1,6 +1,8 @@
 'use strict';
 app.controller('articleController', ['$scope','$route', 'articleService','authService', function ($scope, $route, articleService, authService) {
-	$scope.authentification = authService.authentification;
+	$scope.ready = false;
+
+    $scope.authentification = authService.authentification;
     console.log($scope.authentification);
     $scope.articles = [];
 
@@ -21,7 +23,8 @@ app.controller('articleController', ['$scope','$route', 'articleService','authSe
     articleService.getArticles().then(function (results) {
 
         $scope.articles = results.data;
-        console.log($scope.articles);        
+        console.log($scope.articles); 
+        $scope.ready = true;       
 
     }, function (error) {
         //alert(error.data.message);
@@ -51,6 +54,8 @@ app.controller('articleController', ['$scope','$route', 'articleService','authSe
  
     	});
     };
+
+    
 
 
 }]);

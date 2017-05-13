@@ -4,7 +4,7 @@ app.factory('subscriptionsService', ['$http', 'ngAuthSettings', function ($http,
 	var serviceBase = ngAuthSettings.apiServiceBaseUri;
 	var subscriptionsServiceFactory = {};
 	
-	var _getMySubscribers = function () {
+	var _getMySubscribes = function () {
 
 	return $http.get(serviceBase + "api/subscriptions/").then(function (results) {
 	  return results;
@@ -13,7 +13,7 @@ app.factory('subscriptionsService', ['$http', 'ngAuthSettings', function ($http,
 	};
 
 
-	var _getSubscribers = function (userId) {
+	var _getSubscribes = function (userId) {
 
 	return $http.get(serviceBase + "api/subscriptions/user/"+userId).then(function (results) {
 	  return results;
@@ -44,8 +44,8 @@ app.factory('subscriptionsService', ['$http', 'ngAuthSettings', function ($http,
 
 	
 
-	subscriptionsServiceFactory.getMySubscribers = _getMySubscribers;
-	subscriptionsServiceFactory.getSubscribers = _getSubscribers;
+	subscriptionsServiceFactory.getMySubscribes = _getMySubscribes;
+	subscriptionsServiceFactory.getSubscribes = _getSubscribes;
 	subscriptionsServiceFactory.subscribe = _subscribe;
 	subscriptionsServiceFactory.unsubscribe = _unsubscribe;
   return subscriptionsServiceFactory;

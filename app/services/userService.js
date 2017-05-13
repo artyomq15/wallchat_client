@@ -12,6 +12,16 @@ app.factory('userService', ['$http', 'ngAuthSettings', function ($http, ngAuthSe
 
 	};
 
+
+	var _getAllUsers = function () {
+
+	return $http.get(serviceBase + "api/users").then(function (results) {
+	  return results;
+	});
+
+	};
+
+
 	var _editUserProfile = function (profileInfo){
 
 		return $http.put(serviceBase + "api/users/", profileInfo).then(function (response){
@@ -20,6 +30,7 @@ app.factory('userService', ['$http', 'ngAuthSettings', function ($http, ngAuthSe
 	};
 
 	userServiceFactory.getUser = _getUser;
+	userServiceFactory.getAllUsers = _getAllUsers;
 	userServiceFactory.editUserProfile = _editUserProfile;
   return userServiceFactory;
 
