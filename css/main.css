@@ -254,3 +254,8 @@ a:focus{
 .news_send_button{
   float: right;
 }
+
+.preloader{
+  text-align: center;
+  margin: 50% 0;  
+}
