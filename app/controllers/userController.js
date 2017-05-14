@@ -1,5 +1,5 @@
 'use strict';
-app.controller('userController', ['$scope', 'userService','authService','subscriptionsService', '$routeParams', function ($scope, userService, authService,subscriptionsService, $routeParams) {
+app.controller('userController', ['$scope', 'userService','authService','subscriptionsService', '$routeParams', '$route', '$location',  function ($scope, userService, authService,subscriptionsService, $routeParams, $route, $location) {
 	
     $scope.ready = false;
     
@@ -15,6 +15,8 @@ app.controller('userController', ['$scope', 'userService','authService','subscri
 
     $scope.subscribers = [];
     $scope.subscribersInfo = [];
+
+    $scope.allSubscriptions = [];
 
     $scope.mySubscribes = [];
 
@@ -51,7 +53,7 @@ app.controller('userController', ['$scope', 'userService','authService','subscri
         $scope.user = results.data;
         console.log($scope.user);
 
-        $scope.getSubscribes(userId);
+        $scope.getAllSubscriprions();
         
         
         
@@ -60,6 +62,40 @@ app.controller('userController', ['$scope', 'userService','authService','subscri
     }, function (error) {
         //alert(error.data.message);
     });
+
+
+    $scope.getAllSubscriprions = function (){
+        subscriptionsService.getAllSubscriprions().then(function (results){
+            $scope.allSubscriptions = results.data;
+            console.log("AllSubs");
+            console.log($scope.allSubscriptions);
+
+            for (var i = 0; i < $scope.allSubscriptions.length; i++) {
+                if ($scope.allSubscriptions[i].SubscriberId == userId) {
+                    $scope.subscribes.push($scope.allSubscriptions[i]);
+                } else if ($scope.allSubscriptions[i].UserId == userId) {
+                    $scope.subscribers.push($scope.allSubscriptions[i]);
+                };
+            };
+
+            
+
+            var location = "/user/"+ userId ;
+
+            
+            if (location != $location.path()) {
+                $scope.getSubscribesInfo();
+
+            };
+
+            $scope.ready = true;
+
+
+        },
+        function (error){
+            console.log("AllSubs error " + error);
+        });
+    };
 
     $scope.getSubscribes = function(userId){
 
@@ -104,6 +140,31 @@ app.controller('userController', ['$scope', 'userService','authService','subscri
 
                 };
             };
+
+
+            for (var i=0; i<$scope.subscribers.length;i++){
+                for (var j = 0; j < $scope.users.length; j++) {
+
+                    if ($scope.subscribers[i].SubscriberId == $scope.users[j].Id) {
+                        
+                        for (var k = 0; k < $scope.mySubscribes.length; k++) {
+                            if ($scope.mySubscribes[k].UserId == $scope.users[j].Id) {
+
+                                $scope.users[j].isSubsscribe = true;  
+                                break;
+
+                            };
+                        };                  
+                        $scope.subscribersInfo.push($scope.users[j]);
+                        break;
+                    }
+
+                };
+            };
+
+            console.log("subRRRRsinfo");
+            console.log($scope.subscribersInfo);
+
             console.log("subsinfo");
             console.log($scope.subscribesInfo);
 
@@ -118,7 +179,7 @@ app.controller('userController', ['$scope', 'userService','authService','subscri
                 }; 
             };
 
-            $scope.ready = true;
+            
 
 
             },
@@ -147,6 +208,7 @@ app.controller('userController', ['$scope', 'userService','authService','subscri
     $scope.subscribe = function (userId){
         subscriptionsService.subscribe(userId).then(function (response){
             console.log(response);
+
         },
         function (error){
             console.log("error.subscribe = " + error);

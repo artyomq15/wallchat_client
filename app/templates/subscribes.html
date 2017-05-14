@@ -19,9 +19,9 @@
                         
                         <div data-ng-hide="subscriber.Id == authentification.userId" class="col-xs-4 subscribers">
 
-                            <a data-ng-hide="subscriber.isSubsscribe"  class="button_subscribe" data-ng-click="subscribe(subscriber.Id)">Подписаться</a>
+                            <a data-ng-hide="subscriber.isSubsscribe"  class="button_subscribe" data-ng-click="subscribe(subscriber.Id); subscriber.isSubsscribe = true ">Подписаться</a>
 
-                            <a data-ng-show="subscriber.isSubsscribe"  class="button_unsubscribe button_border" data-ng-click="unsubscribe(subscriber.Id)">Отписаться</a>
+                            <a data-ng-show="subscriber.isSubsscribe"  class="button_unsubscribe button_border" data-ng-click="unsubscribe(subscriber.Id); subscriber.isSubsscribe = false">Отписаться</a>
 
 
                     </div>

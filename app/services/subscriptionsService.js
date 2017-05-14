@@ -22,6 +22,15 @@ app.factory('subscriptionsService', ['$http', 'ngAuthSettings', function ($http,
 	};
 
 
+	var _getAllSubscriprions = function () {
+
+	return $http.get(serviceBase + "api/subscriptions/getall/").then(function (results) {
+	  return results;
+	});
+
+	};
+
+
 	var _subscribe = function (userId) {
 	console.log("USERID" + userId);
 	return $http.post(serviceBase + "api/subscriptions/subscribe/"+userId).then(function (results) {
@@ -46,6 +55,7 @@ app.factory('subscriptionsService', ['$http', 'ngAuthSettings', function ($http,
 
 	subscriptionsServiceFactory.getMySubscribes = _getMySubscribes;
 	subscriptionsServiceFactory.getSubscribes = _getSubscribes;
+	subscriptionsServiceFactory.getAllSubscriprions = _getAllSubscriprions;
 	subscriptionsServiceFactory.subscribe = _subscribe;
 	subscriptionsServiceFactory.unsubscribe = _unsubscribe;
   return subscriptionsServiceFactory;

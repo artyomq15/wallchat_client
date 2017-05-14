@@ -9,25 +9,44 @@
             <div class="row">
                 <div class="col-xs-12 personBlock">
                     <div class="row">
-                        <div class="col-xs-6 col-xs-offset-3 personPhoto"><img class="photo" src="http://wallpapercave.com/wp/g6DWiE6.png"></div>
+                        <div class="col-xs-4 col-xs-offset-4 personPhoto"><img class="photo" src="img/avatar.jpg"></div>
                         <div class="col-xs-12 personName afterBlock">
                             <p class="personName_name">{{user.Name}}</p>
                             <p class="personName_surname">{{user.Surname}}</p>
-                            <p data-ng-show="user.DateBirth" class="personName_city_year">{{user.DateBirth | date:"dd.MM.yyyy"}}</p> 
+
+                            <div class="col-xs-4 col-xs-offset-2">
+                                <a href="#/user/{{user.Id}}/subscribes">{{subscribes.length}} Подписки</a>
+                            </div>
+
+
+                            <div class="col-xs-5">
+                                <a href="#/user/{{user.Id}}/subscribers">{{subscribers.length}} Подписчики</a>
+                            </div>
+
+                            
 
                         </div>
-                        <div class="col-xs-6 col-xs-offset-3">
-                            <a href="#/user/{{user.Id}}/subscribes">{{subscribes.length}} Подписки</a>
-                        </div>
+                        
 
                         <div class="col-xs-6 col-xs-offset-3" data-ng-hide="user.Id == authentification.userId">
 
-                            <a data-ng-hide="user.isSubsscribe" class="button_login" data-ng-click="subscribe(user.Id)">Подписаться</a>
+                            <a data-ng-hide="user.isSubsscribe" class="button_subscribe" data-ng-click="subscribe(user.Id); user.isSubsscribe = true">Подписаться</a>
 
-                            <a data-ng-show="user.isSubsscribe" class="button_login" data-ng-click="unsubscribe(user.Id)">Отписаться</a>
+                            <a data-ng-show="user.isSubsscribe" class="button_unsubscribe button_border" data-ng-click="unsubscribe(user.Id); user.isSubsscribe = false">Отписаться</a>
 
 
                         </div>
+
+                        <div data-ng-show="user.DateBirth" class="col-xs-12">
+                            <p class="personBlock_criteria">Date Birth</p>
+
+                            <p data-ng-show="user.DateBirth" class="personName_city_year">{{user.DateBirth | date:"dd.MM.yyyy"}}</p> 
+
+                            
+                           
+                        </div>
+
+
                         <div data-ng-show="user.Email" class="col-xs-12">
                             <p class="personBlock_criteria">Email</p>
                             <p data-ng-show="user.Email" class="personBlock_contacts">{{user.Email}}</p>
@@ -36,7 +55,7 @@
 
                         <div data-ng-show="user.PhoneNumber" class="col-xs-12">
                             <p class="personBlock_criteria">Phone</p>
-                            <p data-ng-show="user.PhoneNumber" class="personBlock_contacts">Phone: {{user.PhoneNumber}}</p>
+                            <p data-ng-show="user.PhoneNumber" class="personBlock_contacts">{{user.PhoneNumber}}</p>
                         </div>
 
 
