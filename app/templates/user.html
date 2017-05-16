@@ -3,24 +3,38 @@
     </div>
     <div data-ng-show="ready" class="mainpage">
             
-            <div  data-ng-show="user.Id==authentification.userId" class=" settings"><a href="#/editprofile"><img src="img/settings.png"></a></div>
+           
+
+            
+            
            
                 
             <div class="row">
                 <div class="col-xs-12 personBlock">
                     <div class="row">
                         <div class="col-xs-4 col-xs-offset-4 personPhoto"><img class="photo" src="img/avatar.jpg"></div>
+                        <div data-ng-controller="indexController" data-ng-show="user.Id==authentification.userId" class="col-xs-2 col-xs-offser-2 dropdown settings">
+                            <a id="dLabel" role="button" data-toggle="dropdown" >
+                            <img src="img/submenu.svg">
+                            </a>
+                            <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dLabel">
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#/editprofile">Редактировать профиль</a></li>
+                                <li role="presentation" class="divider"></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="" data-ng-click="logOut()">Выйти из аккаунта</a></li>
+                            </ul>
+                        </div>
+
                         <div class="col-xs-12 personName afterBlock">
                             <p class="personName_name">{{user.Name}}</p>
                             <p class="personName_surname">{{user.Surname}}</p>
 
                             <div class="col-xs-4 col-xs-offset-2">
-                                <a href="#/user/{{user.Id}}/subscribes">{{subscribes.length}} Подписки</a>
+                                <a href="#/user/{{user.Id}}/subscribes">{{subscribes.length}} <br>Подписки</a>
                             </div>
 
 
-                            <div class="col-xs-5">
-                                <a href="#/user/{{user.Id}}/subscribers">{{subscribers.length}} Подписчики</a>
+                            <div class="col-xs-4">
+                                <a href="#/user/{{user.Id}}/subscribers">{{subscribers.length}} <br>Подписчики</a>
                             </div>
 
                             

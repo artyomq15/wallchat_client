@@ -23,12 +23,16 @@
 
             <div class="row main_menu">
                 
-                <div class="col-xs-6 header_item" data-ng-hide="!authentification.isAuth">
-                    <a href="#/user/{{authentification.userId}}">Home</a>
+                <div class="col-xs-3 header_item" data-ng-hide="!authentification.isAuth">
+                    <a href="#/user/{{authentification.userId}}"><img src="img/home.svg"></a>
                 </div>
 
                 <div data-ng-hide="!authentification.isAuth" class="col-xs-6 header_item">
                     <a href="#/articles">Wall</a>
+                </div>
+
+                <div class="col-xs-3 header_item" data-ng-hide="!authentification.isAuth">
+                    <a href="#/users"><img src="img/search.svg"></a>
                 </div>
 
                 <!--
@@ -57,13 +61,18 @@
 
         
         
-        
+       
 
 
 
         <!-- libraries -->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+
+
         
 
         <script src="node_modules/angular-local-storage/dist/angular-local-storage.min.js" charset="utf-8"></script>

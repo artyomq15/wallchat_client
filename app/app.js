@@ -27,6 +27,11 @@ app.config(function($routeProvider, $locationProvider){
     templateUrl: "./app/templates/user.html"
   });
 
+  $routeProvider.when("/users", {
+    controller: "userController",
+    templateUrl: "./app/templates/allusers.html"
+  });
+
   $routeProvider.when("/user/:userId", {
     controller: "userController",
     templateUrl: "./app/templates/user.html"

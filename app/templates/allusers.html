@@ -1,0 +1,44 @@
+<div id="left_news" class="left_news_class">
+    <div  class="container">                
+       
+
+
+       <div class="row">
+
+        
+
+
+        <input type="text" class="form-control searchUser" id="555" ng-model="searchUser" placeholder="Поиск">
+
+            <div ng-repeat="user in users | filter:searchUser" >
+                   
+                        <div data-ng-show="user.Name || user.Surname" class="col-xs-8 subscribers">
+                            <a href="#/user/{{user.Id}}">
+                                {{user.Name}} {{user.Surname}}
+                            </a>
+                            
+                        </div>
+                        <div data-ng-hide="user.Name || user.Surname" class="col-xs-8 subscribers">
+                            <a href="#/user/{{user.Id}}">
+                            {{user.UserName}}
+                            </a>
+                        </div>
+
+                            <div data-ng-hide="user.Id == authentification.userId" class="col-xs-4 subscribers">
+
+                            <a data-ng-hide="user.isSubsscribe"  class="button_subscribe" data-ng-click="subscribe(user.Id); user.isSubsscribe = true ">Подписаться</a>
+
+                            <a data-ng-show="user.isSubsscribe"  class="button_unsubscribe button_border" data-ng-click="unsubscribe(user.Id); user.isSubsscribe = false">Отписаться</a>
+
+
+                        </div>
+                        
+                        
+            </div>
+       </div>
+
+
+
+    </div>
+</div>
+

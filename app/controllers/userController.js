@@ -53,7 +53,12 @@ app.controller('userController', ['$scope', 'userService','authService','subscri
         $scope.user = results.data;
         console.log($scope.user);
 
-        $scope.getAllSubscriprions();
+        var location = "/editprofile" ;
+        if (location != $location.path()) {
+            $scope.getAllSubscriprions();
+
+        }
+        
         
         
         
@@ -80,15 +85,15 @@ app.controller('userController', ['$scope', 'userService','authService','subscri
 
             
 
-            var location = "/user/"+ userId ;
+            //var location = "/user/"+ _userId ;
 
             
-            if (location != $location.path()) {
+            /*if (location != $location.path() && "/user" != $location.path() ) {
                 $scope.getSubscribesInfo();
 
-            };
-
-            $scope.ready = true;
+            };*/
+            $scope.getSubscribesInfo();
+            
 
 
         },
@@ -180,7 +185,7 @@ app.controller('userController', ['$scope', 'userService','authService','subscri
             };
 
             
-
+            $scope.ready = true;
 
             },
             function (error){
@@ -194,6 +199,21 @@ app.controller('userController', ['$scope', 'userService','authService','subscri
 
     $scope.editUserProfile = function (){
         console.log($scope.profileInfo);
+        if ($scope.profileInfo.Name == "") {
+            $scope.profileInfo.Name = $scope.user.Name;
+        };
+        if ($scope.profileInfo.Surname == "") {
+            $scope.profileInfo.Surname = $scope.user.Surname;
+        };
+        if ($scope.profileInfo.Email == null) {
+            $scope.profileInfo.Email = $scope.user.Email;
+        };
+        if ($scope.profileInfo.PhoneNumber == null) {
+            $scope.profileInfo.PhoneNumber = $scope.user.PhoneNumber;
+        };
+        if ($scope.profileInfo.Information == null) {
+            $scope.profileInfo.Information = $scope.user.Information;
+        };
         userService.editUserProfile($scope.profileInfo).then(function (response){
             $scope.message = "User Profile " + userId + " edited";
             $scope.editedSuccessfully = true;
