@@ -75,7 +75,7 @@ a:focus{
 
 .main_menu{
   text-align: center;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5)
+  box-shadow: 0 0 10px rgba(0,0,0,0.1)
 }
 .main_menu img{
   width: 25%;
@@ -91,6 +91,9 @@ a:focus{
   margin-top: 15px;
   margin-bottom: 15px;
   width: 100%;
+}
+.button_articles{
+  margin-top: 20px;
 }
 .button_border{
   border-top: solid 1px #6699ff;
@@ -141,6 +144,7 @@ a:focus{
   margin-bottom: 20px; 
 }
 .personBlock{
+  margin-top: 10px;
   width: 100%;
 }
 .personPhoto{
@@ -221,6 +225,9 @@ a:focus{
 }
 .news{
   margin-bottom: 50px;
+}
+.userNews{
+  margin-top: 25px;
 }
 .news_author_photo .photo{
   width: 100%;

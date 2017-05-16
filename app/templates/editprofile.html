@@ -8,7 +8,7 @@
 
 
             <form class="form-login" role="form">
-                <h2 class="form-login-heading">Edit profile</h2>
+                <h2 class="form-login-heading">Редактирование профиля</h2>
 
                 <!--<div class="form-group">
                     <label for="exampleInputFile">File input</label>
@@ -18,9 +18,9 @@
 
 
 
-                <label for="555" class="control-label">Name</label>
+                <label for="555" class="control-label">Имя</label>
                 <input type="text" class="form-control" id="555" data-ng-model="profileInfo.Name" placeholder="{{user.Name}}" required autofocus>
-                <label for="555" class="control-label">Surname</label>
+                <label for="555" class="control-label">Фамилия</label>
                 <input type="text" class="form-control" id="555" data-ng-model="profileInfo.Surname" placeholder="{{user.Surname}}" required>
 
                 
@@ -30,10 +30,10 @@
                 <label for="555" class="control-label">Email</label>
                 <input type="email" class="form-control" id="555" data-ng-model="profileInfo.Email" placeholder="{{user.Email}}" required>
 
-                <label for="555" class="control-label">PhoneNumber</label>
+                <label for="555" class="control-label">Номер телефона</label>
                 <input type="text" class="form-control" id="555" data-ng-model="profileInfo.PhoneNumber" placeholder="{{user.PhoneNumber}}" required>
 
-                <label for="555" class="control-label">Information</label>
+                <label for="555" class="control-label">Информация о себе</label>
                 <textarea class="form-control" data-ng-model="profileInfo.Information" name="content" placeholder="{{user.Information}}"></textarea>
                 
                 <a href="javascript:void(0)" class="button_signup" data-ng-click="editUserProfile()">OK</a>
@@ -46,11 +46,7 @@
             </form>
 
 
-            <div data-ng-controller="indexController">
-            <div class="col-xs-12 button_logout button_border_exit" data-ng-hide="!authentification.isAuth">
-                <a href="" data-ng-click="logOut()">Logout</a>
-            </div>
-        </div>
+           
 
     </div>
 

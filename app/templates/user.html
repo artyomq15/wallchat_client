@@ -51,7 +51,7 @@
 
                         </div>
 
-                        <div data-ng-show="user.DateBirth" class="col-xs-12">
+                        <!--<div data-ng-show="user.DateBirth" class="col-xs-12">
                             <p class="personBlock_criteria">Date Birth</p>
 
                             <p data-ng-show="user.DateBirth" class="personName_city_year">{{user.DateBirth | date:"dd.MM.yyyy"}}</p> 
@@ -59,6 +59,7 @@
                             
                            
                         </div>
+                    -->
 
 
                         <div data-ng-show="user.Email" class="col-xs-12">
@@ -68,14 +69,18 @@
                         </div>
 
                         <div data-ng-show="user.PhoneNumber" class="col-xs-12">
-                            <p class="personBlock_criteria">Phone</p>
+                            <p class="personBlock_criteria">Номер телефона</p>
                             <p data-ng-show="user.PhoneNumber" class="personBlock_contacts">{{user.PhoneNumber}}</p>
                         </div>
 
 
                         <div data-ng-show="user.Information" class="col-xs-12">
-                            <p class="personBlock_criteria">Информация</p>
+                            <p class="personBlock_criteria">Информация о себе</p>
                             <p data-ng-show="user.Information" class="personBlock_info">{{user.Information}}</p>
+                        </div>
+
+                        <div class="col-xs-6 col-xs-offset-3">
+                            <a class="button_unsubscribe button_border button_articles" href="#/user/{{user.Id}}/articles">Записи</a>
                         </div>
                     </div>
                 </div>

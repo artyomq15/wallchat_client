@@ -199,19 +199,19 @@ app.controller('userController', ['$scope', 'userService','authService','subscri
 
     $scope.editUserProfile = function (){
         console.log($scope.profileInfo);
-        if ($scope.profileInfo.Name == "") {
+        if ($scope.profileInfo.Name == "" || $scope.profileInfo.Name == undefined) {
             $scope.profileInfo.Name = $scope.user.Name;
         };
-        if ($scope.profileInfo.Surname == "") {
+        if ($scope.profileInfo.Surname == "" || $scope.profileInfo.Surname == undefined) {
             $scope.profileInfo.Surname = $scope.user.Surname;
         };
-        if ($scope.profileInfo.Email == null) {
+        if ($scope.profileInfo.Email == null || $scope.profileInfo.Email == undefined) {
             $scope.profileInfo.Email = $scope.user.Email;
         };
-        if ($scope.profileInfo.PhoneNumber == null) {
+        if ($scope.profileInfo.PhoneNumber == null || $scope.profileInfo.PhoneNumber == undefined) {
             $scope.profileInfo.PhoneNumber = $scope.user.PhoneNumber;
         };
-        if ($scope.profileInfo.Information == null) {
+        if ($scope.profileInfo.Information == null || $scope.profileInfo.Information == undefined) {
             $scope.profileInfo.Information = $scope.user.Information;
         };
         userService.editUserProfile($scope.profileInfo).then(function (response){

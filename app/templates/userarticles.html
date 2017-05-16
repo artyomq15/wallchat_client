@@ -2,24 +2,8 @@
         <img src="img/pre.svg">
     </div>
 <div data-ng-show="ready" id="left_news" class="left_news_class">
-    <div class="container">                
-       
-
-        
-
-
-
-        <div class="input_new">
-           <textarea class="form-control" data-ng-model="article.Text" name="content" placeholder="Что у вас нового?"></textarea>
-
-           <!--<input type="text" class="form-control" id="555" data-ng-model="article.ShortDescription" placeholder="тэги" >-->
-
-
-            <a href="javascript:void(0)" data-ng-click="sendArticle()" class="button_send_article button_border">Отправить</a>
-        </div>
-
-
-        <div class="news" ng-repeat="article in subsArticles | orderBy:'-Id'">
+    <div class="container">               
+        <div class="userNews" ng-repeat="article in subsArticles | orderBy:'-Id'">
             <div class="news_author">
                 <div class="row">
                     <div class="col-xs-3 news_author_photo">
