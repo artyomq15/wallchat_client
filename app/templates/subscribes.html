@@ -1,7 +1,9 @@
 <div id="left_news" class="left_news_class">
     <div  class="container">                
        <div class="row">
+
             <div ng-repeat="subscriber in subscribesInfo" >
+
                    
                         <div data-ng-show="subscriber.Name || subscriber.Surname" class="col-xs-8 subscribers">
                             <a href="#/user/{{subscriber.Id}}">

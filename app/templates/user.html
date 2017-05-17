@@ -2,13 +2,6 @@
         <img src="img/pre.svg">
     </div>
     <div data-ng-show="ready" class="mainpage">
-            
-           
-
-            
-            
-           
-                
             <div class="row">
                 <div class="col-xs-12 personBlock">
                     <div class="row">
@@ -23,126 +16,37 @@
                                 <li role="presentation"><a role="menuitem" tabindex="-1" href="" data-ng-click="logOut()">Выйти из аккаунта</a></li>
                             </ul>
                         </div>
-
                         <div class="col-xs-12 personName afterBlock">
                             <p class="personName_name">{{user.Name}}</p>
                             <p class="personName_surname">{{user.Surname}}</p>
-
                             <div class="col-xs-4 col-xs-offset-2">
                                 <a href="#/user/{{user.Id}}/subscribes">{{subscribes.length}} <br>Подписки</a>
                             </div>
-
-
                             <div class="col-xs-4">
                                 <a href="#/user/{{user.Id}}/subscribers">{{subscribers.length}} <br>Подписчики</a>
-                            </div>
-
-                            
-
-                        </div>
-                        
-
+                            </div>                          
+                        </div>                       
                         <div class="col-xs-6 col-xs-offset-3" data-ng-hide="user.Id == authentification.userId">
-
                             <a data-ng-hide="user.isSubsscribe" class="button_subscribe" data-ng-click="subscribe(user.Id); user.isSubsscribe = true">Подписаться</a>
-
                             <a data-ng-show="user.isSubsscribe" class="button_unsubscribe button_border" data-ng-click="unsubscribe(user.Id); user.isSubsscribe = false">Отписаться</a>
-
-
                         </div>
-
-                        <!--<div data-ng-show="user.DateBirth" class="col-xs-12">
-                            <p class="personBlock_criteria">Date Birth</p>
-
-                            <p data-ng-show="user.DateBirth" class="personName_city_year">{{user.DateBirth | date:"dd.MM.yyyy"}}</p> 
-
-                            
-                           
-                        </div>
-                    -->
-
-
                         <div data-ng-show="user.Email" class="col-xs-12">
                             <p class="personBlock_criteria">Email</p>
                             <p data-ng-show="user.Email" class="personBlock_contacts">{{user.Email}}</p>
-                           
                         </div>
-
                         <div data-ng-show="user.PhoneNumber" class="col-xs-12">
                             <p class="personBlock_criteria">Номер телефона</p>
                             <p data-ng-show="user.PhoneNumber" class="personBlock_contacts">{{user.PhoneNumber}}</p>
                         </div>
-
-
                         <div data-ng-show="user.Information" class="col-xs-12">
                             <p class="personBlock_criteria">Информация о себе</p>
                             <p data-ng-show="user.Information" class="personBlock_info">{{user.Information}}</p>
                         </div>
-
                         <div class="col-xs-6 col-xs-offset-3">
                             <a class="button_unsubscribe button_border button_articles" href="#/user/{{user.Id}}/articles">Записи</a>
                         </div>
                     </div>
                 </div>
-
-                <!--<div class="col-xs-12 facultyBlock">
-                    <div class="row">
-                        <div class="col-xs-12 faculty">
-                            Механико-математический факультет
-                        </div>
-                        <div class="col-xs-12 course">
-                            3 курс
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xs-12 menu">
-                    <div class="row">
-                        <div class="col-xs-6 item_menu">
-                            <div class="row">
-                                <div class="col-xs-12 item_menu_number">
-                                    25
-                                </div>
-                                <div class="col-xs-12 item_menu_name">
-                                    Подписки
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xs-6 item_menu">
-                            <div class="row">
-                                <div class="col-xs-12 item_menu_number">
-                                    8
-                                </div>
-                                <div class="col-xs-12 item_menu_name">
-                                    События
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xs-6 item_menu">
-                            <div class="row">
-                                <div class="col-xs-12 item_menu_number">
-                                    14
-                                </div>
-                                <div class="col-xs-12 item_menu_name">
-                                    Группы
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xs-6 item_menu">
-                            <div class="row">
-                                <div class="col-xs-12 item_menu_number">
-                                    25
-                                </div>
-                                <div class="col-xs-12 item_menu_name">
-                                    Расписание
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>-->
             </div>
         </div>
 

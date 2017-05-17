@@ -25,8 +25,6 @@ app.factory('articleService', ['$http', 'ngAuthSettings', function ($http, ngAut
 		});
 	};
 
-
-
 	articleServiceFactory.getArticles = _getArticles;
 	articleServiceFactory.sendArticle = _sendArticle;
 	articleServiceFactory.deleteArticle = _deleteArticle;

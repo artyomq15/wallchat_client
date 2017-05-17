@@ -20,9 +20,7 @@
     <body>
 
         <div class="container" data-ng-controller="indexController">
-
-            <div class="row main_menu">
-                
+            <div class="row main_menu">                
                 <div class="col-xs-3 header_item" data-ng-hide="!authentification.isAuth">
                     <a href="#/user/{{authentification.userId}}"><img src="img/home.svg"></a>
                 </div>
@@ -34,24 +32,7 @@
                 <div class="col-xs-3 header_item" data-ng-hide="!authentification.isAuth">
                     <a href="#/users"><img src="img/search.svg"></a>
                 </div>
-
-                <!--
-
-                <div class="col-xs-3 rightDiv" data-ng-hide="authentification.isAuth">
-                    <a href="#/signup">Sign Up</a>
-                </div>
-                <div class="col-xs-3 rightDiv" data-ng-hide="authentification.isAuth">
-                    <a href="#/login">Login</a>
-                </div>
-
-                <div data-ng-hide="!authentification.isAuth" class="col-xs-4">
-                    <a href="#/user">user</a>
-                </div>
-
-                -->
-            </div>
-             
-                
+            </div>            
         </div>
         
         <div class="container">
@@ -83,18 +64,16 @@
         <!-- services -->
         <script src="app/services/authInterceptorService.js"></script>
         <script src="app/services/authService.js"></script>
-        <script src="app/services/ordersService.js"></script>
         <script src="app/services/userService.js"></script>
         <script src="app/services/articleService.js"></script>
         <script src="app/services/subscriptionsService.js"></script>
 
         <!-- controllers -->
-        <script src="app/controllers/homeController.js" charset="utf-8"></script>
+        
         <script src="app/controllers/indexController.js"></script>
         <script src="app/controllers/loginController.js"></script>
         <script src="app/controllers/signupController.js"></script>
         <script src="app/controllers/refreshController.js"></script>
-        <script src="app/controllers/ordersController.js"></script>
         <script src="app/controllers/userController.js"></script>
         <script src="app/controllers/articleController.js"></script>
         

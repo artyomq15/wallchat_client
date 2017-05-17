@@ -5,30 +5,22 @@
     <div class="col-xs-10">
         <div class="row">
             <div class="col-xs-12 home">
-                <img src="img/logo.svg" class="logo">
+                <img src="img/logo.png" class="logo">
             </div>
             <div class="col-xs-12 ">
-
-                     <form class="form-login" role="form">
-                        
-
-
+                     <form class="form-login" role="form"> 
                         <label for="555" class="control-label">Логин</label>
                         <input type="text" class="form-control" id="555" data-ng-model="loginData.userName" required autofocus>
-
 
                         <label for="555" class="control-label">Пароль</label>
                         <input type="password" class="form-control" id="555" data-ng-model="loginData.password" required>
                         
-
                         <a href="javascript:void(0)" class="button_login" data-ng-click="login()">Войти</a>
-
-                        
+                       
                         <div data-ng-hide="message == ''" class="alert alert-danger">
                             {{message}}
                         </div>
                     </form>
-               <!-- <a class="button_login" href="#/login" role="button">Login</a>-->
             </div>
             <div class="col-xs-12 ">
                 <a class="button_signup" href="#/signup" role="button">Регистрация</a>

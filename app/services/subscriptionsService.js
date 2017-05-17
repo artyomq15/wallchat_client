@@ -47,12 +47,6 @@ app.factory('subscriptionsService', ['$http', 'ngAuthSettings', function ($http,
 
 	};
 
-
-
-
-
-	
-
 	subscriptionsServiceFactory.getMySubscribes = _getMySubscribes;
 	subscriptionsServiceFactory.getSubscribes = _getSubscribes;
 	subscriptionsServiceFactory.getAllSubscriprions = _getAllSubscriprions;
